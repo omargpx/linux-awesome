@@ -12,3 +12,6 @@ preview:
 config on hyperland>6
 > windowrulev2 = opacity 0.8 0.7, class^(firefox)$
 
+
+# v2 - Minimal browser
+![view home](/assets/firefox-v2.png)
