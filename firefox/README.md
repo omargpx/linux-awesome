@@ -9,3 +9,6 @@ preview:
 
 ![view home](home.png)
 
+config on hyperland>6
+> windowrulev2 = opacity 0.8 0.7, class^(firefox)$
+
