@@ -1,3 +1,5 @@
+## View
+![view home](/assets/vim-view.png)
 ## Installation
 
 1. Requerid packages
