@@ -109,7 +109,7 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #0A9D9F;
+    background-color: #9F200A;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -305,7 +305,7 @@ window#waybar.hidden {
 #custom-spotify.playing {
   color: rgb(180, 190, 254);
   background: rgb(18,83,14);
-  background: linear-gradient(0deg, rgba(18,83,14,1) 0%, rgba(3,68,0,1) 23%, rgba(30,30,46,1) 100%);  
+  background: linear-gradient(0deg, rgba(22,141,243,0.7) 0%, rgba(12,68,117,0.7) 23%, rgba(30,30,46,1) 100%);  
   background-size: 400% 100%;
   animation: grey-gradient 3s linear infinite;
   transition: all 0.3s ease;

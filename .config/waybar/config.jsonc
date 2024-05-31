@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"modules-left": ["custom/spotify","memory","hyprland/workspaces"],
-	"modules-center": ["custom/weather","network","temperature"],
+	"modules-center": ["custom/weather","network"],
 	"modules-right": ["custom/updates","backlight","pulseaudio","clock", "battery"],
 	
 	"pulseaudio": {
@@ -107,15 +107,17 @@
     },
     "custom/weather": {
       "format": "{}",
-      "tooltip": true,
+      "tooltip": false,
       "interval": 3600,
       "exec": "python ~/.config/waybar/scripts/weather.py",
       "return-type": "json"
     },
+    // disabled
     "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
       "critical-threshold": 80,
       "format": "{icon} {temperatureC}°C",
+      "tooltip": false,
 	    "format-icons": ["", "", ""]
     }
 }
