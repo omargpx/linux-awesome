@@ -41,7 +41,9 @@ def on_metadata(player, metadata, manager):
             ':ad:' in player.props.metadata['mpris:trackid']:
         track_info = 'AD PLAYING'
     elif player.get_artist() != '' and player.get_title() != '':
-        track_info = '{title}'.format(title=player.get_title())
+        title = player.get_title()
+        #track_info = '{title}'.format(title=player.get_title())
+        track_info = '{title}'.format(title=title.split('-', 1)[0].split('(', 1)[0].strip()) #split the title at the first occurrence of "-" or "("
     else:
         track_info = player.get_title()
 
