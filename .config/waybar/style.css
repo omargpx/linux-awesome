@@ -105,11 +105,11 @@ window#waybar.hidden {
 
 #battery.charging, #battery.plugged {
 	color: #ffffff;
-    background-color: #B5E8E0;
+    background-color: #0A9D9F;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #B5E8E0;
+    background-color: #0A9D9F;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -152,6 +152,7 @@ window#waybar.hidden {
 #memory {
 	margin-top: 6px;
 	margin-left: 8px;
+  margin-right: 8px;
 	padding-left: 10px;
 	margin-bottom: 0px;
 	padding-right: 10px;
@@ -240,6 +241,84 @@ window#waybar.hidden {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #ffffff;
+	background: #1e1e2e;
+}
+/*  workspaces */
+#workspaces button label {
+  color: rgb(180, 190, 254);
+}
+
+#workspaces button.active label {
+  color: rgba(255,255,255, 0.8);
+  font-weight: bolder;
+}
+
+#workspaces button:hover {
+  box-shadow: rgb(180, 190, 254) 0 0 0 1.5px;
+  min-width: 27px;
+}
+
+#workspaces {
+  background-color: transparent;
+  padding: 0px 2px;
+  margin-top: 6px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+#workspaces button {
+  box-shadow: rgba(17, 17, 27, 0.2) 0px 0px 3px 2px;
+  background-color: rgba(22, 141, 243, 0.3);
+  border-radius: 10px;
+  margin-right: 8px;
+
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  min-width: 30px;
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+  background-color: rgba(22, 141, 243, 0.7);
+  transition: all 0.3s ease;
+  background-size: 300% 300%;
+  animation: colored-gradient 10s ease infinite;
+}
+
+/* Spotify  */
+
+#custom-spotify {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	color: #ffffff;
+	background: #1e1e2e;
+  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3px 2px;
+  transition: all 0.3s ease;
+}
+
+#custom-spotify.playing {
+  color: rgb(180, 190, 254);
+  background: rgb(18,83,14);
+  background: linear-gradient(0deg, rgba(18,83,14,1) 0%, rgba(3,68,0,1) 23%, rgba(30,30,46,1) 100%);  
+  background-size: 400% 100%;
+  animation: grey-gradient 3s linear infinite;
+  transition: all 0.3s ease;
+}
+
+/* weather & temperature */
+#custom-weather, #temperature{
+  margin-top: 6px;
+	margin-left: 8px;
+  margin-right: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
 	color: #ffffff;
