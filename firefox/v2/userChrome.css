@@ -3,7 +3,7 @@
 :root {
   --6: 6px;
   --8: 8px;
-  --tab-min-height: 24px !important;
+  --tab-min-height: 22px !important;
   --tab-min-width: 24px !important;
   --toolbarbutton-border-radius: var(--6) !important;
   --tab-border-radius: var(--6) !important;
@@ -120,11 +120,12 @@ menuitem[disabled], menu[disabled],
 
 /* 🔗 Status Panel [Url Popup] */
 #statuspanel #statuspanel-label {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border: 1px solid white;
   padding-inline: var(--6) !important;
   border-radius: var(--6) !important;
   margin: var(--8) !important;
+  max-width: 240px;
   background: #008fa652 !important;
 }
 
