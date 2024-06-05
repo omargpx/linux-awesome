@@ -251,7 +251,7 @@ scrollbox[part][orient="horizontal"] {
 
 #tabbrowser-tabs > * {
   padding: 2px !important;
-  margin: 2px !important;
+  margin: 1px 2px !important;
 }
 tab {
   margin: 0 4px 0 0 !important;
@@ -263,6 +263,7 @@ tab {
 .tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
   max-width: 120px !important;
   min-width: 80px !important;
+  height: 35px;
 }
 .tabbrowser-tab .tab-background:not([selected]) {
   background: var(--item) !important;
@@ -278,6 +279,7 @@ tab {
 .tabbrowser-tab[selected][fadein]:not([pinned]) {
   max-width: 320px !important;
   min-width: 240px !important;
+  height: 35px;
 }
 .tabbrowser-tab .tab-background[selected="true"] {
   background: var(--main) !important;
