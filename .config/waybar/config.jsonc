@@ -1,24 +1,43 @@
 {
 	"layer": "top",
 	"modules-left": ["custom/spotify","memory","hyprland/workspaces"],
-	"modules-center": ["custom/weather","network"],
-	"modules-right": ["custom/updates","backlight","pulseaudio","clock", "battery"],
+	"modules-center": ["custom/weather","network","custom/keybindings"],
+	"modules-right": ["backlight","pulseaudio","clock", "battery"],
 	
 	"pulseaudio": {
 		"tooltip": false,
-		"scroll-step": 5,
+		"scroll-step": 1,
 		"format": "{icon}  {volume}%",
-		"format-muted": "{icon}  {volume}%",
+		"format-muted": " Mute",
+    "format-bluetooth": " {volume}%",
+    "format-bluetooth-muted": " Mute",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
 		}
 	},
 	"network": {
-		"tooltip": false,
-		"format-wifi": "   {essid}",
-		"format-ethernet": ""
+		"interval": 5,
+    		"format-wifi": "  {essid}",
+    		//"format-ethernet": " {ipaddr}/{cidr}",
+    		//"format-linked": " {ifname} (No IP)",
+    		"format-disconnected": "睊 Disconnected",
+    		"format-disabled": "睊 Disabled"
+    		//"format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+    		//"tooltip-format": " {ifname} via {gwaddr}"
 	},
+	"backlight": {
+    		"interval": 2,
+    		"align": 0,
+    		"rotate": 0,
+    		"format": "{icon} {percent}%",
+    		"format-icons": [
+      			"",
+      			"",
+      			"",
+      			""
+    ]
+  },
   "hyprland/workspaces": {
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
@@ -38,24 +57,17 @@
   //disabled
   "hyprland/window": {
     "format": "{}"
-  },
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
-        "on-scroll-up": "light -A 2",
-		"on-scroll-down": "light -U 2"
-	},
-    "battery": {
+  },	
+   "battery": {
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}   {capacity}%",
-        "format-charging":"  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{time}  {icon}",
+        "format": "{icon} {capacity}%",
+        "format-charging":" {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
         "format-icons": [" ", " ", " ", " ", " "]
     },
 	  "tray":{
@@ -63,17 +75,12 @@
 		  "spacing": 10
 	  },
     "clock": {
-       // "format": "{:   %I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:   %I:%M %p}",
-        "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
-        "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%U}</b></span>",
-        "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "on-scroll": {
-          "calendar": 1
-        }
-    },
+    "interval": 60,
+    "align": 0,
+    "rotate": 0,
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%I:%M %p}"
+  },
     "cpu": {
         "interval": 15,
         "format": "  {}%",
@@ -81,7 +88,7 @@
     },
     "memory": {
         "interval": 30,
-        "format": "  {}%",
+        "format": " {}%",
         "max-length": 10
     },
     "custom/spotify": {
@@ -96,14 +103,14 @@
     //disabled power
     "custom/power":{
         "format": " ",
-        "on-click": "archlinux-logout",
+        "on-click": "archlinux-logout"
     },
     "custom/updates":{
-        "format": "{} Update(s)",
-        "exec": "checkupdates-aur | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 15,
-        "on-click": "kitty -e paru -Syu && notify-send 'Sistema actualizado' "
+       "format": "   {}",
+       "exec": "checkupdates | wc -l",
+       "exec-if": "[[ $(checkupdates | wc -l) ]]",
+       "interval": 10800,
+       "on-click": "kitty --class update -T update -o font_size=11 -e yay -Syu && notify-send 'Sistema actualizado' "
     },
     "custom/weather": {
       "format": "{}",
@@ -119,5 +126,10 @@
       "format": "{icon} {temperatureC}°C",
       "tooltip": false,
 	    "format-icons": ["", "", ""]
+    },
+    "custom/keybindings":{
+    	"format":" ",
+	"tootlip":false,
+	"on-click":"python ~/.config/waybar/scripts/donate.py"
     }
 }

@@ -1,8 +1,15 @@
+```
+Azel OS is not an operating system. all this is a customization by https://omargpax.pages.dev for personal use. therefore, the credits for everything is in the customization files. the operating system behind this is Arcolinux with hyprland-wayland. you can change all this according to your taste.
+```
+# capture screen #
+  open terminal, command: slurp | grim -g "$(slurp)" ~/Imágenes/screenshot.png
+
 # Hyprland CheatSheet #
 
   Super = Windows Key
 
 # common operations
+  Super   Alt    t        *term* (`kitty`)
   Super          Return   *term* (`kitty`)
   Super          q        *quit* (kill focused window)
   Super   Shift  q        *quit* (kill focused window)
